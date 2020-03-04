@@ -9,7 +9,7 @@ int main()
     {
         scanf("%d", &a[c]);
     }
-    printf("\nStep 1:-\n");
+    printf("\nStep 1 :-\n");
     for (j = 2; j <= n; j++)
     {
         i = 1;
@@ -18,15 +18,43 @@ int main()
             i++;
         }
         temp = a[j];
-        printf("after i[%d] loop = %d %d %d %d %d\tTemp=%d\n", i, a[1], a[2], a[3], a[4], a[5], temp);
+
+
+// ----------    loop of i shown in output ------------------------
+        printf("after i[%d] loop = ", i);
+        for (c = 1; c <= n; c++)
+        {
+            printf("%d ", a[c]);
+        }
+        printf("\tTemp=%d\n", temp);
+// -------------- end -----------------------------------
+
         for (k = 0; k <= (j - i - 1); k++)
         {
             a[j - k] = a[j - k - 1];
 
-            printf("after k[%d] loop = %d %d %d %d %d\tTemp=%d\n", k, a[1], a[2], a[3], a[4], a[5], temp);
+// ----------    loop of k shown in output ------------------------
+            printf("after k[%d] loop = ", k);
+            for (c = 1; c <= n; c++)
+            {
+                printf("%d ", a[c]);
+            }
+            printf("\tTemp=%d\n", temp);
+// ------------------ end ----------------------------------
+
         }
         a[i] = temp;
-        printf("after j[%d] loop = %d %d %d %d %d\tTemp=%d\n\n\nStep %d:-\n", j, a[1], a[2], a[3], a[4], a[5], temp, j);
+
+
+// ----------    loop of k shown in output ------------------------
+            printf("AFTER J[%d] LOOP = ", j);
+            for (c = 1; c <= n; c++)
+            {
+                printf("%d ", a[c]);
+            }
+            printf("\tTemp=%d ---------\n\n\nStep %d :-\n", temp,j);
+// ------------------ end ----------------------------------
+      
     }
     printf("Ascending order is\t");
     for (c = 1; c <= n; c++)
